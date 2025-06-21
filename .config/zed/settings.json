@@ -1,0 +1,57 @@
+{
+    "git_panel": {
+        "dock": "right"
+    },
+    "show_edit_predictions": true,
+    "languages": {
+        "Go": {
+            "show_edit_predictions": true
+        }
+    },
+    "theme": {
+        "mode": "system",
+        "light": "Dawnfox",
+        "dark": "BlackFox"
+    },
+    "icon_theme": "Colored Zed Icons Theme Light",
+    "features": {
+        "edit_prediction_provider": "copilot"
+    },
+    "project_panel": {
+        "dock": "right"
+    },
+    "base_keymap": "VSCode",
+    "vim_mode": true,
+    "vim": {
+        "toggle_relative_line_numbers": true
+    },
+    "ui_font_size": 14,
+    "buffer_font_family": "Anonymous Pro",
+    "buffer_font_size": 18,
+    "buffer_font_weight": 300,
+    "cursor_blink": false,
+    "wrap_guides": [80, 100],
+    "show_wrap_guides": true,
+    "format_on_save": "on",
+    "tab_size": 4,
+    "terminal": {
+        "font_family": "AnonymicePro Nerd Font Mono",
+        "font_size": 14,
+        "cursor_shape": "bar"
+    },
+    "agent": {
+        "always_allow_tool_actions": true,
+        "default_profile": "write",
+        "dock": "left",
+        "default_model": {
+            "provider": "copilot_chat",
+            "model": "claude-3.5-sonnet"
+        },
+        "version": "2"
+    },
+    "language_models": {
+        "ollama": {
+            "low_speed_timeout_in_seconds": 30
+        }
+    }
+}
