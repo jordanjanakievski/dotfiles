@@ -1,19 +1,58 @@
 {
+    "colorize_brackets": true,
+    "diagnostics": {
+        "include_warnings": true
+    },
+    "edit_predictions": {
+        "mode": "eager",
+        "copilot": {
+            "proxy": null,
+            "proxy_no_verify": null,
+            "enterprise_uri": null
+        },
+        "enabled_in_text_threads": false
+    },
+    "ssh_connections": [
+        {
+            "host": "teach.cs.utoronto.ca",
+            "username": "janakiev",
+            "args": [],
+            "projects": [
+                {
+                    "paths": ["/h/u4/c1/00/janakiev/Documents/csc443"]
+                },
+                {
+                    "paths": [
+                        "/h/u4/c1/00/janakiev/Documents/csc443/KV-Store/./"
+                    ]
+                }
+            ]
+        }
+    ],
     "git_panel": {
         "dock": "right"
     },
     "show_edit_predictions": true,
     "languages": {
-        "Go": {
-            "show_edit_predictions": true
+        "C++": {
+            "tab_size": 4,
+            "format_on_save": "off"
+        },
+        "C": {
+            "tab_size": 4,
+            "format_on_save": "off"
         }
     },
     "theme": {
         "mode": "system",
-        "light": "Dawnfox",
-        "dark": "Jango"
+        "light": "Rosé Pine Dawn",
+        "dark": "Rosé Pine"
     },
-    "icon_theme": "Colored Zed Icons Theme Light",
+    "icon_theme": {
+        "mode": "system",
+        "light": "Colored Zed Icons Theme Dark",
+        "dark": "Colored Zed Icons Theme Dark"
+    },
     "features": {
         "edit_prediction_provider": "copilot"
     },
@@ -25,8 +64,8 @@
     "vim": {
         "toggle_relative_line_numbers": true
     },
-    "ui_font_size": 14,
-    "buffer_font_family": "Anonymous Pro",
+    "ui_font_size": 16,
+    "buffer_font_family": "JetBrains Mono NL",
     "buffer_font_size": 18,
     "buffer_font_weight": 300,
     "cursor_blink": false,
@@ -35,23 +74,21 @@
     "format_on_save": "on",
     "tab_size": 4,
     "terminal": {
-        "font_family": "AnonymicePro Nerd Font Mono",
+        "font_family": "JetBrains Mono",
         "font_size": 14,
         "cursor_shape": "bar"
     },
     "agent": {
+        "inline_assistant_model": {
+            "provider": "copilot_chat",
+            "model": "gpt-5-mini"
+        },
         "always_allow_tool_actions": true,
         "default_profile": "write",
         "dock": "left",
         "default_model": {
             "provider": "copilot_chat",
-            "model": "claude-3.5-sonnet"
-        },
-        "version": "2"
-    },
-    "language_models": {
-        "ollama": {
-            "low_speed_timeout_in_seconds": 30
+            "model": "gpt-5-mini"
         }
     }
 }

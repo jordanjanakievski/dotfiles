@@ -1,8 +1,9 @@
-theme = jango
-font-family = "AnonymicePro Nerd Font Mono"
+theme = Kamino
+font-family = "JetBrains Mono NL"
 window-height = "36"
 window-width = "112"
 font-feature = -liga
-font-size = "18"
+font-size = "16"
 window-padding-x = 2
 window-padding-y = 2
+background-opacity = 0.9
