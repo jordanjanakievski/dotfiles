@@ -1,0 +1,41 @@
+@define-color base    #141414;
+@define-color surface #1c1c1c;
+@define-color overlay #2a2a2a;
+@define-color muted   #6e6e6e;
+@define-color text    #e6e6e6;
+@define-color bright  #ffffff;
+
+* {
+    font-family: 'Noto Sans Mono', 'JetBrainsMono Nerd Font', 'Font Awesome 6 Free', 'Font Awesome 6 Brands', monospace;
+    font-size: 13px;
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+}
+
+window#waybar { background-color: @base; color: @text; }
+window#waybar.hidden { opacity: 0.2; }
+
+#workspaces { margin: 4px 4px; padding: 0 4px; background-color: @surface; border-radius: 8px; }
+#workspaces button { padding: 0 8px; margin: 3px 2px; background-color: transparent; color: @muted; border-radius: 6px; }
+#workspaces button:hover { background-color: @overlay; color: @text; }
+#workspaces button.active { background-color: @bright; color: @base; }
+#workspaces button.urgent { background-color: @bright; color: @base; font-weight: bold; }
+
+#window { color: @muted; margin: 0 8px; }
+
+#clock, #battery, #cpu, #memory, #disk, #network, #bluetooth, #pulseaudio, #tray, #idle_inhibitor {
+    padding: 0 10px; margin: 4px 2px; background-color: @surface; color: @text; border-radius: 8px;
+}
+
+#network.disconnected { color: @muted; }
+#bluetooth.disabled, #bluetooth.off { color: @muted; }
+#pulseaudio.muted { color: @muted; }
+#battery.charging, #battery.plugged { color: @bright; }
+#battery.warning:not(.charging) { font-weight: bold; }
+#battery.critical:not(.charging) { background-color: @bright; color: @base; font-weight: bold; }
+
+#tray { margin-right: 6px; }
+#tray > .needs-attention { background-color: @bright; color: @base; }
+
+@import "accent.css";

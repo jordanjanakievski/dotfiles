@@ -1,0 +1,38 @@
+configuration {
+    modi: "drun,run,window";
+    show-icons: true;
+    font: "Noto Sans Mono 11";
+    display-drun: "Apps";
+}
+
+* {
+    base:      #141414ff;
+    mantle:    #141414ff;
+    surface0:  #1c1c1cff;
+    text:      #e6e6e6ff;
+    subtext:   #6e6e6eff;
+    accent:    #cfcfcfff;
+    background-color: transparent;
+    text-color:       @text;
+}
+
+window {
+    background-color: @base;
+    border:           2px;
+    border-color:     @accent;
+    border-radius:    10px;
+    width:             480px;
+    location:          center;
+    padding:           4px;
+}
+
+mainbox { children: [ inputbar, listview ]; spacing: 10px; padding: 10px; }
+inputbar { background-color: @surface0; border-radius: 8px; padding: 8px 12px; children: [ entry ]; }
+entry { placeholder: "Search…"; placeholder-color: @subtext; text-color: @text; }
+listview { lines: 8; spacing: 4px; scrollbar: false; }
+element { padding: 6px 10px; border-radius: 8px; }
+element normal.normal { background-color: transparent; text-color: @text; }
+element alternate.normal { background-color: transparent; text-color: @text; }
+element selected.normal { background-color: @accent; text-color: @mantle; }
+element-icon { size: 1.1em; }
+element-text { vertical-align: 0.5; }

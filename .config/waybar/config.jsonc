@@ -1,0 +1,42 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 30,
+    "spacing": 4,
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["hyprland/window"],
+    "modules-right": ["pulseaudio", "network", "bluetooth", "cpu", "memory", "battery", "clock", "tray"],
+    "hyprland/workspaces": { "format": "{name}", "on-click": "activate", "all-outputs": true },
+    "hyprland/window": { "format": "{title}", "max-length": 60 },
+    "tray": { "spacing": 10 },
+    "clock": {
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+    "cpu": { "format": "{usage}% ", "tooltip": false },
+    "memory": { "format": "{}% 󰍛" },
+    "battery": {
+        "states": { "warning": 30, "critical": 15 },
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "network": {
+        "format-wifi": "{essid} ",
+        "format-ethernet": "{ipaddr}/{cidr}",
+        "format-disconnected": "Disconnected ⚠",
+        "on-click": "env XDG_CURRENT_DESKTOP=GNOME gnome-control-center wifi"
+    },
+    "bluetooth": {
+        "format": "",
+        "format-connected": " {device_alias}",
+        "format-off": "",
+        "on-click": "env XDG_CURRENT_DESKTOP=GNOME gnome-control-center bluetooth"
+    },
+    "pulseaudio": {
+        "format": "{volume}% {icon}",
+        "format-muted": "",
+        "format-icons": { "default": ["", "", ""] },
+        "on-click": "env XDG_CURRENT_DESKTOP=GNOME gnome-control-center sound"
+    }
+}
