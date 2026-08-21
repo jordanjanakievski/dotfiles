@@ -1,0 +1,14 @@
+background-color=#242424f2
+text-color=#ffffff
+border-color=#ffffff
+border-size=2
+border-radius=8
+padding=10
+margin=10
+default-timeout=5000
+anchor=top-right
+font=Noto Sans Mono 11
+
+[urgency=critical]
+border-color=#e01b24
+default-timeout=0
