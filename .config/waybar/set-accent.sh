@@ -8,7 +8,7 @@ case "$ID" in
 esac
 
 cat > ~/.config/waybar/accent.css <<CSS
-#workspaces button.active { background-color: ${accent}; color: @base; }
+#workspaces button.active { background-color: ${accent}; color: @bright; }
 CSS
 
 exec waybar
