@@ -32,7 +32,7 @@ hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
 
 hl.on("hyprland.start", function()
     hl.exec_cmd("~/.config/waybar/set-accent.sh")
-    hl.exec_cmd('swaybg -m fill -c "#191724"')
+    hl.exec_cmd("~/.config/hypr/set-wallpaper.sh")
     hl.exec_cmd("hypridle")
     hl.exec_cmd("mako")
     hl.exec_cmd("/usr/libexec/gsd-rfkill")
@@ -69,6 +69,11 @@ hl.config({
 
     decoration = {
         rounding = 6,
+        blur = {
+            enabled = true,
+            size = 6,
+            passes = 3,
+        },
     },
 
     animations = {
@@ -106,6 +111,18 @@ hl.window_rule({
     name  = "float-save-file",
     match = { title = "^(Save File)$" },
     float = true,
+})
+
+------------------------
+---- LAYER RULES -------
+------------------------
+
+hl.layer_rule({
+    name  = "waybar-blur",
+    match = { namespace = "waybar" },
+    blur = true,
+    xray = true,
+    ignore_alpha = 0.2,
 })
 
 ---------------------

@@ -1,9 +1,11 @@
 @define-color base    #141414;
-@define-color surface #1c1c1c;
-@define-color overlay #2a2a2a;
+@define-color surface rgba(128, 128, 128, 0.22);
+@define-color overlay rgba(128, 128, 128, 0.38);
 @define-color muted   #6e6e6e;
 @define-color text    #e6e6e6;
 @define-color bright  #ffffff;
+@define-color pill-border rgba(255, 255, 255, 0.12);
+@define-color pill-shadow rgba(0, 0, 0, 0.35);
 
 * {
     font-family: 'Noto Sans Mono', 'JetBrainsMono Nerd Font', 'Font Awesome 6 Free', 'Font Awesome 6 Brands', monospace;
@@ -13,19 +15,29 @@
     min-height: 0;
 }
 
-window#waybar { background-color: @base; color: @text; }
+window#waybar { background-color: transparent; color: @text; }
 window#waybar.hidden { opacity: 0.2; }
 
-#workspaces { margin: 4px 4px; padding: 0 4px; background-color: @surface; border-radius: 8px; }
-#workspaces button { padding: 0 8px; margin: 3px 2px; background-color: transparent; color: @muted; border-radius: 6px; }
+#workspaces {
+    margin: 4px 4px; padding: 0 4px; background-color: @surface; border-radius: 8px;
+    border: 1px solid @pill-border; box-shadow: 0 1px 3px @pill-shadow;
+}
+#workspaces button { padding: 0 8px; margin: 3px 2px; background-color: transparent; color: @text; border-radius: 6px; }
 #workspaces button:hover { background-color: @overlay; color: @text; }
 #workspaces button.active { background-color: @bright; color: @base; }
 #workspaces button.urgent { background-color: @bright; color: @base; font-weight: bold; }
 
-#window { color: @muted; margin: 0 8px; }
+#window {
+    padding: 0 10px; margin: 4px 2px; background-color: @surface; color: @text; border-radius: 8px;
+    border: 1px solid @pill-border; box-shadow: 0 1px 3px @pill-shadow;
+}
+window#waybar.empty #window {
+    padding: 0; margin: 0; background-color: transparent; border: none; box-shadow: none;
+}
 
 #clock, #battery, #cpu, #memory, #disk, #network, #bluetooth, #pulseaudio, #tray, #idle_inhibitor {
     padding: 0 10px; margin: 4px 2px; background-color: @surface; color: @text; border-radius: 8px;
+    border: 1px solid @pill-border; box-shadow: 0 1px 3px @pill-shadow;
 }
 
 #network.disconnected { color: @muted; }
